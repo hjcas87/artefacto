@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import { motion } from "framer-motion";
-import { Sling as Hamburger } from "hamburger-react";
+import { motion } from 'framer-motion';
+import { Sling as Hamburger } from 'hamburger-react';
 
-import { navVariants } from "../utils/motion";
-import styles from "../styles";
+import { navVariants } from '../utils/motion';
+import styles from '../styles';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -33,8 +33,8 @@ const Navbar = () => {
           />
         </div>
       </motion.div>
-      <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-close"}`}>
-        <div className={isOpen ? "sidebar-content-open" : "sidebar-content"}>
+      <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
+        <div className={isOpen ? 'sidebar-content-open' : 'sidebar-content'}>
           <div className="btn-nav">
             <p>ESTUDIO</p>
           </div>
