@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { motion } from 'framer-motion';
-import { Sling as Hamburger } from 'hamburger-react';
+import { motion } from "framer-motion";
+import { Sling as Hamburger } from "hamburger-react";
 
-import { navVariants } from '../utils/motion';
-import styles from '../styles';
-import { socials } from '../constants';
+import { navVariants } from "../utils/motion";
+import styles from "../styles";
+import { socials } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -34,8 +34,14 @@ const Navbar = () => {
           />
         </div>
       </motion.div>
-      <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
-        <div className={isOpen ? 'sidebar-content-open flex flex-col z-40' : 'sidebar-content'}>
+      <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-close"}`}>
+        <div
+          className={
+            isOpen
+              ? "sidebar-content-open flex flex-col z-40"
+              : "sidebar-content"
+          }
+        >
           <div className="btn-nav">
             <p>ESTUDIO</p>
           </div>
@@ -48,7 +54,7 @@ const Navbar = () => {
           <div className="btn-nav">
             <p>CONTACTO</p>
           </div>
-        <div className="flex gap-4 h-full content-end z-40">
+          <div className="flex gap-4 h-full content-end z-40">
             {socials.map((social) => (
               <img
                 key={social.name}
