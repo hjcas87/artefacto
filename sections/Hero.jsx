@@ -28,7 +28,7 @@ const Hero = () => (
       <div className="flex justify-center items-center flex-col relative z-10">
         <motion.img
           variants={textVariant(1.1)}
-          className={`w-[350px] rounded-full z-10`}
+          className={`w-[250px] rounded-full z-10`}
           src="/logoSala.jpg"
         />
       </div>

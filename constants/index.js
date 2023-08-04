@@ -2,17 +2,17 @@ export const exploreWorlds = [
   {
     id: 'world-1',
     imgUrl: './salaA.jpg',
-    title: 'Sala A',
+    title: 'SALA A',
   },
   {
     id: 'world-2',
     imgUrl: './salaEstudio.jpg',
-    title: 'Sala Estudio',
+    title: 'SALA ESTUDIO',
   },
   {
     id: 'world-3',
     imgUrl: './salaB.jpg',
-    title: 'Sala B',
+    title: 'SALA B',
   },
 ];
 

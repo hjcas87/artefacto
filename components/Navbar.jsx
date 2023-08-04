@@ -38,12 +38,12 @@ const Navbar = () => {
         <div
           className={
             isOpen
-              ? 'sidebar-content-open flex flex-col z-40'
+              ? 'sidebar-content-open flex flex-col w-full sm:w-96'
               : 'sidebar-content'
           }
         >
           <div className="btn-nav">
-            <p>ESTUDIO</p>
+            <p>NOSOTROS</p>
           </div>
           <div className="btn-nav">
             <p>SALAS</p>
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="btn-nav">
             <p>CONTACTO</p>
           </div>
-          <div className="flex gap-4 h-full content-end z-40">
+          <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
             {socials.map((social) => (
               <img
                 key={social.name}
