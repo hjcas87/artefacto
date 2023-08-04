@@ -6,7 +6,7 @@ export const exploreWorlds = [
   },
   {
     id: 'world-2',
-    imgUrl: './salaestudio.jpg',
+    imgUrl: './salaEstudio.jpg',
     title: 'Sala Estudio',
   },
   {
