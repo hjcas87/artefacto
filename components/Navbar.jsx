@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import { motion } from "framer-motion";
-import { Sling as Hamburger } from "hamburger-react";
+import { motion } from 'framer-motion';
+import { Sling as Hamburger } from 'hamburger-react';
 
-import { navVariants } from "../utils/motion";
-import styles from "../styles";
-import { socials } from "../constants";
+import { navVariants } from '../utils/motion';
+import styles from '../styles';
+import { socials } from '../constants';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -34,20 +34,20 @@ const Navbar = () => {
           />
         </div>
       </motion.div>
-      <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-close"}`}>
+      <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
         <div
           className={
             isOpen
-              ? "sidebar-content-open flex flex-col w-full sm:w-96"
-              : "sidebar-content"
+              ? 'sidebar-content-open flex flex-col w-full sm:w-96'
+              : 'sidebar-content'
           }
         >
           <div className="btn-nav">
             <a
               href="#inicio"
               style={{
-                transform: !isOpen && "translateX(-150px)",
-                transition: !isOpen && "0s",
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
               }}
               onClick={() => setOpen(false)}
             >
@@ -58,8 +58,8 @@ const Navbar = () => {
             <a
               href="#nosotros"
               style={{
-                transform: !isOpen && "translateX(-150px)",
-                transition: !isOpen && "0s",
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
               }}
               onClick={() => setOpen(false)}
             >
@@ -70,8 +70,8 @@ const Navbar = () => {
             <a
               href="#salas"
               style={{
-                transform: !isOpen && "translateX(-150px)",
-                transition: !isOpen && "0s",
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
               }}
               onClick={() => setOpen(false)}
             >
@@ -79,10 +79,28 @@ const Navbar = () => {
             </a>
           </div>
           <div className="btn-nav">
-            <a>TURNOS</a>
+            <a
+              href="#salas"
+              style={{
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
+              }}
+              onClick={() => setOpen(false)}
+            >
+              SALAS
+            </a>
           </div>
           <div className="btn-nav">
-            <a>CONTACTO</a>
+            <a
+              href="#salas"
+              style={{
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
+              }}
+              onClick={() => setOpen(false)}
+            >
+              SALAS
+            </a>
           </div>
           <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
             {socials.map((social) => (
