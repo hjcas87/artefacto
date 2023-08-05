@@ -43,16 +43,28 @@ const Navbar = () => {
           }
         >
           <div className="btn-nav">
-            <p>NOSOTROS</p>
+            <a href="#inicio"
+            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+              onClick={() => setOpen(false)}
+            >INICIO</a>
           </div>
           <div className="btn-nav">
-            <p>SALAS</p>
+            <a href="#nosotros"
+            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+              onClick={() => setOpen(false)}
+            >NOSOTROS</a>
           </div>
           <div className="btn-nav">
-            <p>TURNOS</p>
+            <a href="#salas"
+            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+              onClick={() => setOpen(false)}
+              >SALAS</a>
           </div>
           <div className="btn-nav">
-            <p>CONTACTO</p>
+            <a>TURNOS</a>
+          </div>
+          <div className="btn-nav">
+            <a>CONTACTO</a>
           </div>
           <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
             {socials.map((social) => (

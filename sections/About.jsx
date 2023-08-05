@@ -8,6 +8,8 @@ import { fadeIn, staggerContainer } from '../utils/motion';
 
 const About = () => (
   <section className={`${styles.paddings} relative z-10`}>
+    
+    <div className="absolute top-[-40px]" id="nosotros"/>
     <div className="gradient-02 z-0" />
     <motion.div
       variants={staggerContainer}
@@ -24,7 +26,7 @@ const About = () => (
       >
         En <span className="font-extrabold text-white">Artefacto</span> contamos con 3 salas de ensayo con equipamiento y tratamiento acústico de primera calidad. 
         Además, contamos con un Estudio de grabación, para que puedas realizar tu Demo / Maqueta o Disco de manera Profesional. <br />
-        Con una amplia sala ideal para grandes bandas o simplemente para que puedas ensayar comodamente, 
+        Con una sala amplia ideal para grandes bandas o simplemente para que puedas ensayar comodamente, 
         mas dos salas de menor dimension para trios, cuartetos o bateristas que necesiten un lugar donde practicar{' '}
         {/* <span className="font-extrabold text-white">
           madness of the metaverse

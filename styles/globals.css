@@ -119,10 +119,11 @@
   z-index: 40;
   margin-top: .050rem;
 }
-.sidebar p {
+.sidebar a {
   padding: 1.5rem;
   transform: translateX(0px);
   transition: 0.8s;
+  display: block;
 }
 
 .sidebar-open{
@@ -144,12 +145,12 @@
   width: 0;
   transition: .8s;
 }
-.sidebar-content p, .sidebar-content img{
+.sidebar-content a, .sidebar-content img{
   transform: translateX(-150px);
   transition: 0.8s;
   
 }
-.btn-nav p:hover{
+.btn-nav a:hover{
   transform: translateX(20px);
   /* transform: scaleX(1.1); */
 }
