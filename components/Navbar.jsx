@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { motion } from 'framer-motion';
-import { Sling as Hamburger } from 'hamburger-react';
+import { motion } from "framer-motion";
+import { Sling as Hamburger } from "hamburger-react";
 
-import { navVariants } from '../utils/motion';
-import styles from '../styles';
-import { socials } from '../constants';
+import { navVariants } from "../utils/motion";
+import styles from "../styles";
+import { socials } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -34,31 +34,49 @@ const Navbar = () => {
           />
         </div>
       </motion.div>
-      <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
+      <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-close"}`}>
         <div
           className={
             isOpen
-              ? 'sidebar-content-open flex flex-col w-full sm:w-96'
-              : 'sidebar-content'
+              ? "sidebar-content-open flex flex-col w-full sm:w-96"
+              : "sidebar-content"
           }
         >
           <div className="btn-nav">
-            <a href="#inicio"
-            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+            <a
+              href="#inicio"
+              style={{
+                transform: !isOpen && "translateX(-150px)",
+                transition: !isOpen && "0s",
+              }}
               onClick={() => setOpen(false)}
-            >INICIO</a>
+            >
+              INICIO
+            </a>
           </div>
           <div className="btn-nav">
-            <a href="#nosotros"
-            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+            <a
+              href="#nosotros"
+              style={{
+                transform: !isOpen && "translateX(-150px)",
+                transition: !isOpen && "0s",
+              }}
               onClick={() => setOpen(false)}
-            >NOSOTROS</a>
+            >
+              NOSOTROS
+            </a>
           </div>
           <div className="btn-nav">
-            <a href="#salas"
-            style={{transform: !isOpen && 'translateX(-150px)', transition: !isOpen && '0s'}}
+            <a
+              href="#salas"
+              style={{
+                transform: !isOpen && "translateX(-150px)",
+                transition: !isOpen && "0s",
+              }}
               onClick={() => setOpen(false)}
-              >SALAS</a>
+            >
+              SALAS
+            </a>
           </div>
           <div className="btn-nav">
             <a>TURNOS</a>
