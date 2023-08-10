@@ -3,7 +3,7 @@
 import { Fade } from 'react-slideshow-image';
 
 const ModalRoom = ({ show, instruments }) => (
-  <div className="absolute bg-white top-0 left-0 right-0 bottom-0 h-screen sm:h-4/5 mt-10 p-4 m-4 z-10 sm:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-indigo-200">
+  <div className="absolute bg-white top-0 left-0 right-0 bottom-0 lg:h-4/5 mt-10 p-4 m-4 z-10 sm:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-indigo-200">
     <Fade duration={10000}>
       {instruments.inst.map((inst, i) => (
         <div key={i} className="each-slide">
@@ -20,7 +20,7 @@ const ModalRoom = ({ show, instruments }) => (
       <button
         type="button"
         onClick={show}
-        style={{ minWidth: '250px' }}
+        style={{ minWidth: '200px' }}
         className="mx-auto middle none center rounded-lg bg-gray-800 py-3 self-end px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       >
         Cerrar
