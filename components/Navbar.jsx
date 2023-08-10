@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { Sling as Hamburger } from 'hamburger-react';
@@ -11,9 +11,18 @@ import { socials } from '../constants';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  // const server = async () => {
+  //   await fetch("/api/hello")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data))
+  // }
+
+  // useEffect(() => {
+  //   server()
+  // }, []);
 
   return (
-    <nav className="fixed z-40 border-b border-gray-600 w-full h-24 bg-primary-black">
+    <nav className="fixed z-40 border-b border-gray-600 w-full h-20 bg-primary-black">
       <div className="absolute w-[50%] inset-0 gradient-01" />
 
       <motion.div
@@ -87,7 +96,7 @@ const Navbar = () => {
               }}
               onClick={() => setOpen(false)}
             >
-              SALAS
+              TURNOS
             </a>
           </div>
           <div className="btn-nav">
@@ -99,10 +108,22 @@ const Navbar = () => {
               }}
               onClick={() => setOpen(false)}
             >
-              SALAS
+              PRODUCCIONES
             </a>
           </div>
-          <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
+          <div className="btn-nav">
+            <a
+              href="#salas"
+              style={{
+                transform: !isOpen && 'translateX(-150px)',
+                transition: !isOpen && '0s',
+              }}
+              onClick={() => setOpen(false)}
+            >
+              UBICACION
+            </a>
+          </div>
+          {/* <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
             {socials.map((social) => (
               <img
                 key={social.name}
@@ -111,7 +132,7 @@ const Navbar = () => {
                 className="w-[24px] h-[24px] object-contain cursor-pointer"
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

@@ -9,7 +9,8 @@ import { InsightCard, TitleText, TypingText } from '../components';
 
 const Insights = () => (
   <section className={`${styles.paddings} relative z-10`}>
-    <motion.div
+    
+    {/* <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -23,7 +24,7 @@ const Insights = () => (
           <InsightCard key={`insight-${index}`} {...item} index={index + 1} />
         ))}
       </div>
-    </motion.div>
+    </motion.div> */}
   </section>
 );
 

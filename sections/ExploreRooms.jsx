@@ -1,15 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from '../styles';
 import { exploreWorlds } from '../constants';
 import { staggerContainer } from '../utils/motion';
-import { ExploreCard, TitleText, TypingText } from '../components';
+import { ExploreCard, ModalRoom, TitleText, TypingText } from '../components';
 
-const Explore = () => {
+const ExploreRooms = () => {
   const [active, setActive] = useState('world-2');
+  const [showMore, setShowMore] = useState(false);
+  const [instruments, setInstruments] = useState([]);
+  const show = () => {
+    setShowMore(!showMore);
+  };
+  
+  const worldActive = () => {
+    for (let i = 0; i < exploreWorlds.length; i++) {
+      if (exploreWorlds[i].id === active) {
+        return  setInstruments(
+          {
+            title:exploreWorlds[i].title,
+            inst: exploreWorlds[i].instruments,
+            salaDesc: exploreWorlds[i].salaDesc
+          })
+      }
+      
+    }
+  }
+  useEffect(() => {
+      worldActive()
+  }, [active]);
 
   return (
     <section className={`${styles.paddings} relative`}>
@@ -34,12 +56,19 @@ const Explore = () => {
               index={index}
               active={active}
               handleClick={setActive}
+              show={show}
+              showMore={showMore}
             />
           ))}
         </div>
       </motion.div>
+      {
+            showMore && (
+              <ModalRoom show={show} instruments={instruments}/>
+            )
+          }
     </section>
   );
 };
 
-export default Explore;
+export default ExploreRooms;
