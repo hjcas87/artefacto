@@ -5,7 +5,7 @@ import { Fade } from 'react-slideshow-image';
 const ModalRoom = ({ show, instruments }) => (
   <div className="absolute bg-white top-0 left-0 right-0 bottom-0 h-screen sm:h-4/5 mt-10 p-4 m-4 z-10 sm:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-indigo-200">
     <Fade duration={10000}>
-      {instruments.inst.map((inst, i) (
+      {instruments.inst.map((inst, i) => (
           <div key={i} className="each-slide">
             <div className="mb-5 mx-auto">
               <img src={inst.img} className="h-80" />
