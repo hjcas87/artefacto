@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { Sling as Hamburger } from 'hamburger-react';
 
 import { navVariants } from '../utils/motion';
 import styles from '../styles';
-import { socials } from '../constants';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
