@@ -23,7 +23,7 @@ const jwtClient = new google.auth.JWT(
   GOOGLE_CLIENT_EMAIL,
   null,
   GOOGLE_PRIVATE_KEY,
-  SCOPES
+  SCOPES,
 );
 
 const calendar = google.calendar({
@@ -42,9 +42,9 @@ export default function handler(req, res) {
       calendarId:
         req.body.id === 'salaA'
           ? arrayOfIds[0]
-            : req.body.id === 'salaB'
+          : req.body.id === 'salaB'
             ? arrayOfIds[1]
-          : arrayOfIds[2],
+            : arrayOfIds[2],
       timeMin: new Date().toISOString(),
       maxResults: 10,
       singleEvents: true,
@@ -55,8 +55,8 @@ export default function handler(req, res) {
         console.log('Something went wrong: ', error); // If there is an error, log it to the console
       } else {
         if (result.data.items.length > 0) {
-          result.data.items.map((element) => {
-            return events = [
+          result.data.items.map((element) => (
+            events = [
               ...events,
               {
                 id: req.body.id,
@@ -64,16 +64,16 @@ export default function handler(req, res) {
                 start: element.start.dateTime,
                 end: element.end.dateTime,
               },
-            ];
-          });
-          console.log('List of upcoming events: ', events); // If there are events, print them out
+            ]
+          ));
+          // console.log('List of upcoming events: ', events); // If there are events, print them out
           return res.status(200).json(events);
         } else {
           console.log('No upcoming events found.', result); // If no events are found
         }
-      };
+      }
     }
   );
 
   // }
-}
+};
