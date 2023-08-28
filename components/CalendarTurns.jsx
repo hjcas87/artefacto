@@ -50,7 +50,7 @@ const CalendarTurns = ({ id }) => {
     })
       .then((res) => res.json())
       .then((fetchData) => {
-        fetchData.map((turn) => {
+        fetchData.forEach((turn) => {
           (events = [
             ...events,
             {
@@ -63,7 +63,6 @@ const CalendarTurns = ({ id }) => {
       });
     setTurns(events);
     setData(true);
-    return;
   };
   useEffect(() => {
     server();
@@ -85,12 +84,12 @@ const CalendarTurns = ({ id }) => {
         culture="es"
         localizer={localizer}
         defaultView="work_week"
-        views={["day", "work_week"]}
+        views={['day', 'work_week']}
         events={turns}
         startAccessor="start"
         // subtract one millisecond from the end date putting midnight dates at 11:59:999
-        endAccessor={({ end }) => end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end}
-        showMultiDayTimes={true}
+        endAccessor={({ end }) => (end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end)}
+        showMultiDayTimes
         min={new Date('2023-08-23T16:00:00')}
         style={{ height: 600 }}
         messages={messages}
