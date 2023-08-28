@@ -35,8 +35,6 @@ const calendar = google.calendar({
 export default function handler(req, res) {
   console.log(req.body);
   let events = [];
-  // for (let i = 0; i < arrayOfIds.length; i++) {
-  //   // console.log(arrayOfIds)
   calendar.events.list(
     {
       calendarId:
@@ -65,14 +63,11 @@ export default function handler(req, res) {
             },
           ]
         ));
-          // console.log('List of upcoming events: ', events); // If there are events, print them out
-          return res.status(200).json(events);
-        } else {
-          console.log('No upcoming events found.', result); // If no events are found
-        }
-      
+        // console.log('List of upcoming events: ', events); // If there are events, print them out
+        return res.status(200).json(events);
+      } else {
+        console.log('No upcoming events found.', result); // If no events are found
+      } 
     },
   );
-
-  // }
 }
