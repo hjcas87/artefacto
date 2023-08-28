@@ -25,24 +25,32 @@ export const exploreWorlds = [
   },
   {
     id: 'world-2',
-    imgUrl: './salaEstudio.jpg',
+    imgUrl: './salaEstudio2.jpg',
     title: 'SALA ESTUDIO',
     salaDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex reiciendis minima similique consequuntur sit asperiores nemo voluptatibus quidem nihil vel magnam dolorem laboriosam aut ipsam, quam molestias architecto temporibus quo.',
     instruments: [
       {
-        img: './orange.webp',
+        img: './twinreverb.jpg',
         desc: 'El Dual Terror es un descendiente directo del icónico Tiny Terror, que literalmente puso patas arriba el mundo de la guitarra. Con cuatro EL84 que ofrecen 30 vatios, el cabezal Dual Terror es el amplificador más potente de la gama Terror y ofrece dos canales del famoso tono Tiny Terror, con el doble de headroom. Las opciones de conmutación de alimentación flexibles y un panel de control directo al punto hacen de este un gran amplificador.',
       },
       {
-        img: './hotrod.webp',
+        img: './vox.jpg',
         desc: 'el Hot Rod Deluxe IV presenta un circuito de preamplificador modificado, una reverb de muelles de sonido más suave y una estética actualizada que cualquier músico seguramente apreciará. Un amplificador sobrealimentado adornado con características solicitadas por los músicos más exigentes, este combo abrasador de 40 vatios 1x12 "es ideal para guitarristas que necesitan potencia Hot-Rodded con rendimiento de sobra',
       },
       {
-        img: './hartke.webp',
+        img: './roland.jpg',
         desc: 'Combinando la versatilidad de los altavoces HyDrive de Hartke con un diseño de gabinete moderno y liviano, el HL410 está diseñado para bajistas exigentes que necesitan un gabinete que pueda manejar cualquier cosa que le arrojen. Diseñado desde cero, el HL410 cuenta con cuatro altavoces de neodimio HyDrive de 10" capaces de manejar 1000 vatios RMS en un gabinete que pesa solo 45.3 libras.',
       },
       {
-        img: './pearl.webp',
+        img: './ampeg.jpg',
+        desc: 'La serie de tambores Vision Birch de Pearl se basa en la fórmula Vision original, que proporciona un tono maravillosamente equilibrado. Este set de batería Vision con acabado en Cromo Pulido consiste en un bombo de 22 pulgadas, toms de 12 y 13 pulgadas, un tom de piso de 16 pulgadas y una caja a juego de 14 pulgadas.',
+      },
+      {
+        img: './gretch.jpg',
+        desc: 'La serie de tambores Vision Birch de Pearl se basa en la fórmula Vision original, que proporciona un tono maravillosamente equilibrado. Este set de batería Vision con acabado en Cromo Pulido consiste en un bombo de 22 pulgadas, toms de 12 y 13 pulgadas, un tom de piso de 16 pulgadas y una caja a juego de 14 pulgadas.',
+      },
+      {
+        img: './consalaestudio.jpg',
         desc: 'La serie de tambores Vision Birch de Pearl se basa en la fórmula Vision original, que proporciona un tono maravillosamente equilibrado. Este set de batería Vision con acabado en Cromo Pulido consiste en un bombo de 22 pulgadas, toms de 12 y 13 pulgadas, un tom de piso de 16 pulgadas y una caja a juego de 14 pulgadas.',
       },
     ],

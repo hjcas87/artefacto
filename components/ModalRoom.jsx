@@ -3,20 +3,25 @@
 import { Fade } from 'react-slideshow-image';
 
 const ModalRoom = ({ show, instruments }) => (
-  <div className="absolute bg-white top-0 left-0 right-0 lg:h-4/5 mt-10 p-4 m-4 z-50 sm:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-indigo-200">
+  <div className="absolute bg-white top-0 left-0 right-0 mt-10 px-4 pt-4 pb-12 m-4 z-40 lg:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-gradient-to-t from-gray-800 from-70% via-indigo-800 via-15% to-indigo-500 to-90%">
     <Fade duration={10000}>
       {instruments.inst.map((inst, i) => (
         <div key={i} className="each-slide">
           <div className="mb-5 mx-auto">
-            <img src={inst.img} className="h-80" />
+            <img
+              src={inst.img}
+              className="h-80 rounded-[24px] mt-4 shadow-lg shadow-gray-400"
+            />
           </div>
-          <p className="p-4 text-center">{inst.desc}</p>
+          <p className="p-8 text-center">{inst.desc}</p>
         </div>
       ))}
     </Fade>
-    <div className="mx-auto flex flex-col items-center gap-y-8">
-      <h2 className="font-bold">{instruments.title}</h2>
-      <p className="p-4 text-center">{instruments.salaDesc}</p>
+    <div className="mx-auto flex flex-col items-center gap-y-4 mt-8">
+      <h2 className="font-bold text-xl text-white">{instruments.title}</h2>
+      <p className="py-2 px-8 text-center text-white font-light">
+        {instruments.salaDesc}
+      </p>
       <button
         type="button"
         onClick={show}

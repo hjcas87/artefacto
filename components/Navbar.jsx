@@ -10,18 +10,9 @@ import styles from '../styles';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  // const server = async () => {
-  //   await fetch("/api/hello")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data))
-  // }
-
-  // useEffect(() => {
-  //   server()
-  // }, []);
 
   return (
-    <nav className="fixed z-40 border-b border-gray-600 w-full h-20 bg-primary-black">
+    <nav className="fixed z-50 border-b border-gray-600 w-full h-20 bg-primary-black">
       <div className="absolute w-[50%] inset-0 gradient-01" />
 
       <motion.div
@@ -38,7 +29,7 @@ const Navbar = () => {
             toggled={isOpen}
             toggle={setOpen}
             duration={1}
-            color="rgba(255, 255, 255, 0.8)"
+            color='rgba(255, 255, 255, 0.8)'
           />
         </div>
       </motion.div>

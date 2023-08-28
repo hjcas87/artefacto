@@ -16,8 +16,8 @@ const Page = () => (
     <Hero />
     <About />
     <ExploreRooms />
+    <WhatsNew />
     <GetStarted />
-    {/* <WhatsNew /> */}
     <World />
     <Insights />
     {/* <Feedback /> */}

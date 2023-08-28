@@ -7,6 +7,7 @@ import InsightCard from './InsightCard';
 import Footer from './Footer';
 import WpButton from './WpButton';
 import ModalRoom from './ModalRoom';
+import CalendarTurns from './CalendarTurns';
 
 export {
   Navbar,
@@ -19,4 +20,5 @@ export {
   Footer,
   WpButton,
   ModalRoom,
+  CalendarTurns,
 };
