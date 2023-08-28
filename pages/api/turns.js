@@ -52,9 +52,8 @@ export default function handler(req, res) {
     },
     (error, result) => {
       if (error) {
-        console.log('Something went wrong: ', error); // If there is an error, log it to the console
-      } else {
-        if (result.data.items.length > 0) {
+        return console.log('Something went wrong: ', error); // If there is an error, log it to the console
+      } else if (result.data.items.length > 0) {
           result.data.items.forEach((element) => (
             events = [
               ...events,
@@ -71,7 +70,7 @@ export default function handler(req, res) {
         } else {
           console.log('No upcoming events found.', result); // If no events are found
         }
-      }
+      
     },
   );
 
