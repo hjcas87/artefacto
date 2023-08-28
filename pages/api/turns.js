@@ -52,7 +52,7 @@ export default function handler(req, res) {
       if (error) {
         console.log('Something went wrong: ', error); // If there is an error, log it to the console
       } else if (result.data.items.length > 0) {
-        result.data.items.forEach((element) => (
+        result.data.items.map((element) => {
           events = [
             ...events,
             {
@@ -62,12 +62,12 @@ export default function handler(req, res) {
               end: element.end.dateTime,
             },
           ]
-        ));
+        });
         // console.log('List of upcoming events: ', events); // If there are events, print them out
         return res.status(200).json(events);
       } else {
         console.log('No upcoming events found.', result); // If no events are found
-      } 
+      }
     },
   );
 }
