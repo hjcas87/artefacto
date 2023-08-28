@@ -52,7 +52,7 @@ export default function handler(req, res) {
       if (error) {
         console.log('Something went wrong: ', error); // If there is an error, log it to the console
       } else if (result.data.items.length > 0) {
-        result.data.items.map((element) => {
+        result.data.items.forEach((element) => {
           events = [
             ...events,
             {
@@ -61,7 +61,7 @@ export default function handler(req, res) {
               start: element.start.dateTime,
               end: element.end.dateTime,
             },
-          ]
+          ];
         });
         // console.log('List of upcoming events: ', events); // If there are events, print them out
         return res.status(200).json(events);
