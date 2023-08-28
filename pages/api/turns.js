@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const { google } = require('googleapis');
+
 export const config = {
   api: {
     externalResolver: true,
@@ -41,8 +42,8 @@ export default function handler(req, res) {
       calendarId:
         req.body.id === 'salaA'
           ? arrayOfIds[0]
-          : req.body.id === 'salaB'
-          ? arrayOfIds[1]
+            : req.body.id === 'salaB'
+            ? arrayOfIds[1]
           : arrayOfIds[2],
       timeMin: new Date().toISOString(),
       maxResults: 10,
@@ -55,7 +56,7 @@ export default function handler(req, res) {
       } else {
         if (result.data.items.length > 0) {
           result.data.items.map((element) => {
-            events = [
+            return events = [
               ...events,
               {
                 id: req.body.id,
@@ -70,7 +71,7 @@ export default function handler(req, res) {
         } else {
           console.log('No upcoming events found.', result); // If no events are found
         }
-      }
+      };
     }
   );
 
