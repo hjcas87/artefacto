@@ -29,7 +29,7 @@ const Navbar = () => {
             toggled={isOpen}
             toggle={setOpen}
             duration={1}
-            color='rgba(255, 255, 255, 0.8)'
+            color="rgba(255, 255, 255, 0.8)"
           />
         </div>
       </motion.div>

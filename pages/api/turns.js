@@ -44,13 +44,14 @@ export default function handler(req, res) {
             ? arrayOfIds[1]
             : arrayOfIds[2],
       timeMin: new Date().toISOString(),
-      maxResults: 10,
+      maxResults: 300,
       singleEvents: true,
       orderBy: 'startTime',
     },
     (error, result) => {
       if (error) {
-        console.log('Something went wrong: ', error); // If there is an error, log it to the console
+        throw new Error('database failed to connect', error);
+        // console.log('Something went wrong: ', error); // If there is an error, log it to the console
       } else if (result.data.items.length > 0) {
         result.data.items.forEach((element) => {
           events = [
@@ -66,7 +67,7 @@ export default function handler(req, res) {
         // console.log('List of upcoming events: ', events); // If there are events, print them out
         return res.status(200).json(events);
       } else {
-        console.log('No upcoming events found.', result); // If no events are found
+        console.log('No upcoming events found.'); // If no events are found
       }
     },
   );
