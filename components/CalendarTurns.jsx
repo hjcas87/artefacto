@@ -41,7 +41,6 @@ const CalendarTurns = ({ id }) => {
 
   const server = async () => {
     if (!turns) {
-      console.log('se mando a llamar')
       let events = [];
       await fetch('/api/turns', {
         method: 'POST',
@@ -98,8 +97,8 @@ const CalendarTurns = ({ id }) => {
         style={{ height: 600 }}
         messages={messages}
         eventPropGetter={(event) => {
-          const bgEvent = event.id === 'salaA' ? 'rgb(63, 81, 181)' : event.id === 'salaB' ? 'rgb(244, 81, 30)' : 'rgb(167 143 46)'
-          return { style: { backgroundColor: bgEvent } }
+          const bgEvent = event.id === 'salaA' ? 'rgb(63, 81, 181)' : event.id === 'salaB' ? 'rgb(244, 81, 30)' : 'rgb(167 143 46)';
+          return { style: { backgroundColor: bgEvent } };
         }}
       />
     </div>

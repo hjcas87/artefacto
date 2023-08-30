@@ -15,8 +15,8 @@ const ModalRoom = ({ show, instruments }) => (
           </div>
           <ul className="p-8 list-disc">
             {
-              inst.esp.map((item,i) => (
-                <li key={i}>{item}</li>
+              inst.esp.map((item, index) => (
+                <li key={index}>{item}</li>
               ))
             }
           </ul>
