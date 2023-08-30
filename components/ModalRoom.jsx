@@ -13,7 +13,13 @@ const ModalRoom = ({ show, instruments }) => (
               className="h-80 rounded-[24px] mt-4 shadow-lg shadow-gray-400"
             />
           </div>
-          <p className="p-8 text-center">{inst.desc}</p>
+          <ul className="p-8 list-disc">
+            {
+              inst.esp.map((item,i) => (
+                <li key={i}>{item}</li>
+              ))
+            }
+          </ul>
         </div>
       ))}
     </Fade>

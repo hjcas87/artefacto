@@ -8,17 +8,26 @@ import { staggerContainer, fadeIn } from '../utils/motion';
 import { useEffect, useRef, useState } from 'react';
  
 
-const WhatsNew = () => {
+const ListOfRooms = () => {
   // const salas = ['salaA', 'salaB', 'salaEstudio'];const ref = useRef(null)
+  const [isLoaded, setIsLoaded] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref)
+  useEffect(() => {
+    if (!isLoaded && isInView) {
+      console.log('first')
+      setIsLoaded(true)
+    }
+  }, [isInView])
+  
   return (
     <section className={`${styles.paddings} relative z-10`} ref={ref}>
+    <div className="absolute top-[-40px]" id="turnos"/>
       <motion.div
         variants={staggerContainer}
         initial='hidden'
         whileInView='show'
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
       >
         <motion.div
@@ -28,18 +37,24 @@ const WhatsNew = () => {
           <TypingText title='| Turnos' />
           <TitleText title={<>Turnos Disponibles</>} />
           {
-            isInView && 
+            isLoaded && 
             <div className="mt-[50px]">
               <div>
-                <TitleText title={<>SALA A</>} />
+                <div className="my-7">
+                  <TitleText title={<>SALA A</>} />
+                </div>
                 <CalendarTurns id={'salaA'} />
               </div>
               <div>
-                <TitleText title={<>SALA B</>} />
+                <div className="my-7">
+                  <TitleText title={<>SALA B</>} />
+                </div>
                 <CalendarTurns id={'salaB'} />
               </div>
               <div>
-                <TitleText title={<>SALA ESTUDIO</>} />
+                <div className="my-7">
+                  <TitleText title={<>SALA ESTUDIO</>} />
+                </div>
                 <CalendarTurns id={'salaEstudio'} />
               </div>
             
@@ -52,4 +67,4 @@ const WhatsNew = () => {
   );
 };
 
-export default WhatsNew;
+export default ListOfRooms;

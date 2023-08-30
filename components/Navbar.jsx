@@ -7,6 +7,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 
 import { navVariants } from '../utils/motion';
 import styles from '../styles';
+import { navButtons } from '../constants';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -41,88 +42,22 @@ const Navbar = () => {
               : 'sidebar-content'
           }
         >
-          <div className="btn-nav">
-            <a
-              href="#inicio"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              INICIO
-            </a>
-          </div>
-          <div className="btn-nav">
-            <a
-              href="#nosotros"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              NOSOTROS
-            </a>
-          </div>
-          <div className="btn-nav">
-            <a
-              href="#salas"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              SALAS
-            </a>
-          </div>
-          <div className="btn-nav">
-            <a
-              href="#salas"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              TURNOS
-            </a>
-          </div>
-          <div className="btn-nav">
-            <a
-              href="#salas"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              PRODUCCIONES
-            </a>
-          </div>
-          <div className="btn-nav">
-            <a
-              href="#salas"
-              style={{
-                transform: !isOpen && 'translateX(-150px)',
-                transition: !isOpen && '0s',
-              }}
-              onClick={() => setOpen(false)}
-            >
-              UBICACION
-            </a>
-          </div>
-          {/* <div className="flex gap-4 h-3/5 justify-center items-end pb-7">
-            {socials.map((social) => (
-              <img
-                key={social.name}
-                src={social.url}
-                alt={social.name}
-                className="w-[24px] h-[24px] object-contain cursor-pointer"
-              />
-            ))}
-          </div> */}
+          {
+            navButtons.map((button, i) => (
+              <div className="btn-nav" key={i}>
+                <a
+                  href={button.href}
+                  style={{
+                    transform: !isOpen && 'translateX(-250px)',
+                    transition: !isOpen && '0s',
+                  }}
+                  onClick={() => setOpen(false)}
+                >
+                  {button.title}
+                </a>
+              </div>
+            ))
+          }
         </div>
       </div>
     </nav>

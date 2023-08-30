@@ -1,13 +1,12 @@
 import { Footer, Navbar, WpButton } from "../components";
+import IgButton from '../components/IgButton';
 import {
   About,
   ExploreRooms,
-  Feedback,
-  GetStarted,
   Hero,
-  Insights,
-  WhatsNew,
-  World,
+  ListOfRooms,
+  Location,
+  SpotifyList,
 } from "../sections";
 
 const Page = () => (
@@ -16,13 +15,14 @@ const Page = () => (
     <Hero />
     <About />
     <ExploreRooms />
-    <WhatsNew />
-    <GetStarted />
-    <World />
-    <Insights />
-    {/* <Feedback /> */}
+    <ListOfRooms />
+    <SpotifyList />
+    <Location />
     <Footer />
-    <WpButton />
+    <div className="fixed bottom-10 right-10 sm:bottom-20 sm:right-20 z-50 flex gap-8">
+      <WpButton />
+      <IgButton />
+    </div>
   </div>
 );
 

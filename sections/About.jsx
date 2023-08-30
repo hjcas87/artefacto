@@ -28,15 +28,6 @@ const About = () => (
         Además, contamos con un Estudio de grabación, para que puedas realizar tu Demo / Maqueta o Disco de manera Profesional. <br />
         Con una sala amplia ideal para grandes bandas o simplemente para que puedas ensayar comodamente, 
         mas dos salas de menor dimension para trios, cuartetos o bateristas que necesiten un lugar donde practicar{' '}
-        {/* <span className="font-extrabold text-white">
-          madness of the metaverse
-        </span>{' '}
-        of today, using only{' '}
-        <span className="font-extrabold text-white">VR</span> devices you can
-        easily explore the metaverse world you want, turn your dreams into
-        reality. Let's{' '}
-        <span className="font-extrabold text-white">explore</span> the madness
-        of the metaverse by scrolling down */}
       </motion.p>
 
       <motion.img
