@@ -23,25 +23,25 @@ const Footer = () => (
           <h2 className="font-normal text-[24px] leading-[30px] text-white">
             ARTEFACTO
           </h2>
-            <p className="font-normal text-[14px] text-white opacity-50">
-              Copyright © 2023 Artefacto estudio y salas. Todos los derechos
-              reservados.
-            </p>
+          <p className="font-normal text-[14px] text-white opacity-50">
+            Copyright © 2023 Artefacto estudio y salas. Todos los derechos
+            reservados.
+          </p>
 
-            <div className="flex gap-4">
+          <div className="flex gap-4">
               {socials.map((social) => (
                 <a
-                key={social.name}
-                href={social.link}
-                target="_blank"
-                rel="noreferrer"
+                  key={social.name}
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                <img
-                  src={social.url}
-                  alt={social.name}
-                  className="w-[24px] h-[24px] object-contain cursor-pointer"
-                />
-              </a>
+                  <img
+                    src={social.url}
+                    alt={social.name}
+                    className="w-[24px] h-[24px] object-contain cursor-pointer"
+                  />
+                </a>
               ))}
           </div>
         </div>
