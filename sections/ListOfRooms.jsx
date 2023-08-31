@@ -21,8 +21,8 @@ const ListOfRooms = () => {
   }, [isInView])
   
   return (
-    <section className={`${styles.paddings} relative z-10`} ref={ref}>
-    <div className="absolute top-[-40px]" id="turnos"/>
+    <section className={`${styles.paddings} relative z-10`} ref={ref} id="turnos">
+    {/* <div className="absolute top-[-40px]" /> */}
       <motion.div
         variants={staggerContainer}
         initial='hidden'
@@ -36,6 +36,7 @@ const ListOfRooms = () => {
         >
           <TypingText title='| Turnos' />
           <TitleText title={<>Turnos Disponibles</>} />
+          <p className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white">Abierto de Lunes a Viernes de 16:00hs a 00:00hs</p>
           {
             isLoaded && 
             <div className="mt-[50px]">

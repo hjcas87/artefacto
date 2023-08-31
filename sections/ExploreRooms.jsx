@@ -19,7 +19,7 @@ const ExploreRooms = () => {
   const worldActive = () => {
     for (let i = 0; i < exploreWorlds.length; i++) {
       if (exploreWorlds[i].id === active) {
-        return  setInstruments(
+        return setInstruments(
           {
             title:exploreWorlds[i].title,
             inst: exploreWorlds[i].instruments,

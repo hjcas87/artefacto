@@ -13,7 +13,8 @@ const ModalRoom = ({ show, instruments }) => (
               className="h-80 rounded-[24px] mt-4 shadow-lg shadow-gray-400"
             />
           </div>
-          <ul className="p-8 list-disc">
+          <h2 className="text-center text-lg font-bold">{inst.title}</h2>
+          <ul className="p-8 list-disc flex flex-col w-3/4 m-auto">
             {
               inst.esp.map((item, index) => (
                 <li key={index}>{item}</li>

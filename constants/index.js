@@ -30,6 +30,7 @@ export const exploreWorlds = [
     salaDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex reiciendis minima similique consequuntur sit asperiores nemo voluptatibus quidem nihil vel magnam dolorem laboriosam aut ipsam, quam molestias architecto temporibus quo.',
     instruments: [
       {
+        title: 'Fender Twin Reverb',
         img: './twinreverb.jpg',
         esp: [
           '85 vatios',
@@ -39,16 +40,17 @@ export const exploreWorlds = [
         ] 
       },
       {
+        title: 'Vox',
         img: './vox.jpg',
         esp: [
           'Amplificador combo para guitarra a válvulas de 30 W, 3 x 12AX7 preamp y 4 x EL84 potencia',
           '2 Altavoces Celestion G12M Greenback de 12" a 16 Ohm',
           'Entradas de jack, Normal (high y low) Top Boost (high y low) Retorno FX y Footswitch',
-          'Controles Master de Volume y Cut Tone, Volumen (canal normal), y Volumen y EQ independientes para el canal Top Boost, más Reverb y Tremolo',
           'Salidas jack de altavoz externo, de altavoz de extensión y envío FX'
         ]
       },
       {
+        title: 'Roland Jazz Chorus',
         img: './roland.jpg',
         esp: [
           'Construcción: Transistor',
@@ -127,19 +129,13 @@ export const navButtons = [
 
 export const socials = [
   {
-    name: 'twitter',
-    url: '/twitter.svg',
-  },
-  {
-    name: 'linkedin',
-    url: '/linkedin.svg',
-  },
-  {
     name: 'instagram',
+    link: 'https://www.instagram.com/artefactoestudiomdp/',
     url: '/instagram.svg',
   },
   {
     name: 'facebook',
+    link: 'https://www.facebook.com/ArtefactoEstudioySalas',
     url: '/facebook.svg',
   },
 ];
