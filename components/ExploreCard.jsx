@@ -42,7 +42,7 @@ const ExploreCard = ({
           <h2 className="mb-[24px] font-semibold sm:text-[32px] text-[24px] text-white mx-auto self-end">
             {title}
           </h2>
-          {/* <a href="#salas" className="mx-auto"> */}
+          <a href="#salas" className="mx-auto">
             <button
               type="button"
               disabled={showMore ? true : false}
@@ -52,7 +52,7 @@ const ExploreCard = ({
             >
               Ver Más
             </button>
-          {/* </a> */}
+          </a>
         </div>
       </div>
     )}
