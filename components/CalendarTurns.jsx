@@ -99,10 +99,10 @@ const CalendarTurns = ({ id }) => {
           messages={messages}
           eventPropGetter={(event) => {
             const bgEvent = event.id === 'salaA'
-                ? 'rgb(63, 81, 181)'
-                : event.id === 'salaB'
-                  ? 'rgb(244, 81, 30)'
-                  : 'rgb(167 143 46)';
+              ? 'rgb(63, 81, 181)'
+              : event.id === 'salaB'
+                ? 'rgb(244, 81, 30)'
+                : 'rgb(167 143 46)';
             return { style: { backgroundColor: bgEvent } };
           }}
         />
