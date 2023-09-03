@@ -73,20 +73,21 @@ const CalendarTurns = ({ id }) => {
     data && (
       <div>
         <Calendar
-          culture='es'
+          culture="es"
           localizer={localizer}
-          defaultView='work_week'
+          defaultView="work_week"
           views={['day', 'work_week']}
           events={turns}
-          startAccessor='start'
+          startAccessor="start"
           // subtract one millisecond from the end date putting midnight dates at 11:59:999
           endAccessor={({ end }) => {
             if (end.getHours() === 0 && end.getMinutes() === 0) {
               return new Date(end.getTime() - 1);
-            } else if (end.getHours() === 0 && end.getMinutes() !== 0) {
+            }
+            if (end.getHours() === 0 && end.getMinutes() !== 0) {
               const minutosDeMas = end.getMinutes() * 60000;
-              console.log(end.getMinutes());
-              console.log(minutosDeMas);
+              // console.log(end.getMinutes());
+              // console.log(minutosDeMas);
               return new Date(end.getTime() - minutosDeMas - 1000);
             } else {
               return end;
@@ -102,8 +103,8 @@ const CalendarTurns = ({ id }) => {
               event.id === 'salaA'
                 ? 'rgb(63, 81, 181)'
                 : event.id === 'salaB'
-                ? 'rgb(244, 81, 30)'
-                : 'rgb(167 143 46)';
+                  ? 'rgb(244, 81, 30)'
+                  : 'rgb(167 143 46)';
             return { style: { backgroundColor: bgEvent } };
           }}
         />
