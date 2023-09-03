@@ -8,6 +8,8 @@ import { Sling as Hamburger } from 'hamburger-react';
 import { navVariants } from '../utils/motion';
 import styles from '../styles';
 import { navButtons } from '../constants';
+import { scrollNav } from '../utils/scrollNav';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -42,19 +44,33 @@ const Navbar = () => {
               : 'sidebar-content'
           }
         >
-          {
-            navButtons.map((button, i) => (
-              <div className="btn-nav" key={i}>
-                <a
-                  href={button.href}
+          {/* <Link
+                  href={'#ubicacion'}
+                  prefetch={true}
+                  scroll={false}
                   style={{
                     transform: !isOpen && 'translateX(-250px)',
                     transition: !isOpen && '0s',
                   }}
-                  onClick={() => setOpen(false)}
+                  // onClick={(e) => scrollNav(e, setOpen)}
+                >
+                  <a> ubicacion</a>
+                </Link> */}
+          {
+            navButtons.map((button, i) => (
+              <div className="btn-nav" key={i}>
+                <Link
+                  href={button.href}
+                  prefetch={false}
+                  scroll={false}
+                  style={{
+                    transform: !isOpen && 'translateX(-250px)',
+                    transition: !isOpen && '0s',
+                  }}
+                  // onClick={(e) => scrollNav(e, setOpen)}
                 >
                   {button.title}
-                </a>
+                </Link>
               </div>
             ))
           }

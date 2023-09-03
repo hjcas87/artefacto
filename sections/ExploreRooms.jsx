@@ -64,7 +64,7 @@ const ExploreRooms = () => {
       </motion.div>
       {
             showMore && (
-              <ModalRoom show={show} instruments={instruments}/>
+              <ModalRoom show={show} instruments={instruments} />
             )
           }
     </section>

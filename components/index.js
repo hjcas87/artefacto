@@ -5,6 +5,7 @@ import Footer from './Footer';
 import WpButton from './WpButton';
 import ModalRoom from './ModalRoom';
 import CalendarTurns from './CalendarTurns';
+import Spinner from './Spinner';
 
 export {
   Navbar,
@@ -15,4 +16,5 @@ export {
   WpButton,
   ModalRoom,
   CalendarTurns,
+  Spinner,
 };

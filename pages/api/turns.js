@@ -37,7 +37,7 @@ export default function handler(req, res) {
   let events = [];
   calendar.events.list(
     {
-      calendarId:
+      calendarId: 
         req.body.id === 'salaA'
           ? arrayOfIds[0]
           : req.body.id === 'salaB'
@@ -64,9 +64,11 @@ export default function handler(req, res) {
             },
           ];
         });
+        // console.log(result.data.items)
         // console.log('List of upcoming events: ', events); // If there are events, print them out
         return res.status(200).json(events);
       } else {
+        console.log(result)
         console.log('No upcoming events found.'); // If no events are found
       }
     },

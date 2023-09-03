@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 
 import styles from '../styles';
-import { CalendarTurns, TitleText, TypingText } from '../components';
+import { CalendarTurns, Spinner, TitleText, TypingText } from '../components';
 import { staggerContainer, fadeIn } from '../utils/motion';
 import { useEffect, useRef, useState } from 'react';
  
@@ -37,31 +37,41 @@ const ListOfRooms = () => {
           <TypingText title='| Turnos' />
           <TitleText title={<>Turnos Disponibles</>} />
           <p className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white">Abierto de Lunes a Viernes de 16:00hs a 00:00hs</p>
+          {/* <div style={{minHeight: '2200px'}}>
+
           {
-            isLoaded && 
+            isLoaded &&  */}
             <div className="mt-[50px]">
               <div>
                 <div className="my-7">
                   <TitleText title={<>SALA A</>} />
                 </div>
-                <CalendarTurns id={'salaA'} />
+                {
+                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaA'} />
+                }                
               </div>
               <div>
                 <div className="my-7">
                   <TitleText title={<>SALA B</>} />
                 </div>
-                <CalendarTurns id={'salaB'} />
+                {
+                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaB'} />
+                } 
+                {/* <CalendarTurns id={'salaB'} /> */}
               </div>
               <div>
                 <div className="my-7">
                   <TitleText title={<>SALA ESTUDIO</>} />
                 </div>
-                <CalendarTurns id={'salaEstudio'} />
+                {
+                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaEstudio'} />
+                }
               </div>
             
             {/* <CalendarTurns /> */}
-            </div>
-          }
+            {/* </div>
+          } */}
+          </div>
         </motion.div>
       </motion.div>
     </section>

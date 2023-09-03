@@ -114,7 +114,7 @@ export const navButtons = [
     title: 'SALAS' 
   },
   {
-    href: '#turnos',
+    href: 'http://localhost:3000/#turnos',
     title: 'TURNOS' 
   },
   {

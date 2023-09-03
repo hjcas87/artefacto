@@ -69,19 +69,7 @@ const CalendarTurns = ({ id }) => {
   useEffect(() => {
     server();
   }, []);
-  return !data ? (
-    <div className="w-full h-[600px] flex justify-items-center items-center flex-col text-white text-lg">
-      <div className="sk-chase m-auto">
-        <div className="sk-chase-dot" />
-        <div className="sk-chase-dot" />
-        <div className="sk-chase-dot" />
-        <div className="sk-chase-dot" />
-        <div className="sk-chase-dot" />
-        <div className="sk-chase-dot" />
-      </div>
-      <p>Cargando, un momento...</p>
-    </div>
-  ) : (
+  return data &&
     <div>
       <Calendar
         culture="es"
@@ -91,7 +79,19 @@ const CalendarTurns = ({ id }) => {
         events={turns}
         startAccessor="start"
         // subtract one millisecond from the end date putting midnight dates at 11:59:999
-        endAccessor={({ end }) => (end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end)}
+        endAccessor={({ end }) => {
+          if (end.getHours() === 0 && end.getMinutes() === 0) {
+            return new Date(end.getTime() - 1)
+          } else if (end.getHours() === 0 && end.getMinutes() !== 0) {
+            const minutosDeMas = (end.getMinutes() * 60000);
+            console.log(end.getMinutes())
+            console.log(minutosDeMas)
+            return new Date(end.getTime() - minutosDeMas - 1000)
+          } else {
+            return end;
+          }
+          // end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end
+        }}
         showMultiDayTimes
         min={new Date('2023-08-23T16:00:00')}
         style={{ height: 600 }}
@@ -102,7 +102,6 @@ const CalendarTurns = ({ id }) => {
         }}
       />
     </div>
-  );
 };
 
 export default CalendarTurns;

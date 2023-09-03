@@ -14,7 +14,7 @@ const SpotifyList = () => (
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true }}
     >
       <motion.div
         variants={fadeIn('left', 'tween', 0.2, 1)}
