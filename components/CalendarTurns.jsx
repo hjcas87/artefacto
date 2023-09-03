@@ -52,14 +52,14 @@ const CalendarTurns = ({ id }) => {
         .then((res) => res.json())
         .then((fetchData) => {
           fetchData.forEach((turn) => {
-            (events = [
+            events = [
               ...events,
               {
                 ...turn,
                 start: new Date(turn.start),
                 end: new Date(turn.end),
               },
-            ]);
+            ];
           });
         });
       setTurns(events);
@@ -69,39 +69,47 @@ const CalendarTurns = ({ id }) => {
   useEffect(() => {
     server();
   }, []);
-  return data &&
-    <div>
-      <Calendar
-        culture="es"
-        localizer={localizer}
-        defaultView="work_week"
-        views={['day', 'work_week']}
-        events={turns}
-        startAccessor="start"
-        // subtract one millisecond from the end date putting midnight dates at 11:59:999
-        endAccessor={({ end }) => {
-          if (end.getHours() === 0 && end.getMinutes() === 0) {
-            return new Date(end.getTime() - 1)
-          } else if (end.getHours() === 0 && end.getMinutes() !== 0) {
-            const minutosDeMas = (end.getMinutes() * 60000);
-            console.log(end.getMinutes())
-            console.log(minutosDeMas)
-            return new Date(end.getTime() - minutosDeMas - 1000)
-          } else {
-            return end;
-          }
-          // end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end
-        }}
-        showMultiDayTimes
-        min={new Date('2023-08-23T16:00:00')}
-        style={{ height: 600 }}
-        messages={messages}
-        eventPropGetter={(event) => {
-          const bgEvent = event.id === 'salaA' ? 'rgb(63, 81, 181)' : event.id === 'salaB' ? 'rgb(244, 81, 30)' : 'rgb(167 143 46)';
-          return { style: { backgroundColor: bgEvent } };
-        }}
-      />
-    </div>
+  return (
+    data && (
+      <div>
+        <Calendar
+          culture='es'
+          localizer={localizer}
+          defaultView='work_week'
+          views={['day', 'work_week']}
+          events={turns}
+          startAccessor='start'
+          // subtract one millisecond from the end date putting midnight dates at 11:59:999
+          endAccessor={({ end }) => {
+            if (end.getHours() === 0 && end.getMinutes() === 0) {
+              return new Date(end.getTime() - 1);
+            } else if (end.getHours() === 0 && end.getMinutes() !== 0) {
+              const minutosDeMas = end.getMinutes() * 60000;
+              console.log(end.getMinutes());
+              console.log(minutosDeMas);
+              return new Date(end.getTime() - minutosDeMas - 1000);
+            } else {
+              return end;
+            }
+            // end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end
+          }}
+          showMultiDayTimes
+          min={new Date('2023-08-23T16:00:00')}
+          style={{ height: 600 }}
+          messages={messages}
+          eventPropGetter={(event) => {
+            const bgEvent =
+              event.id === 'salaA'
+                ? 'rgb(63, 81, 181)'
+                : event.id === 'salaB'
+                ? 'rgb(244, 81, 30)'
+                : 'rgb(167 143 46)';
+            return { style: { backgroundColor: bgEvent } };
+          }}
+        />
+      </div>
+    )
+  );
 };
 
 export default CalendarTurns;

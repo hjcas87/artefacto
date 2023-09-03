@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import 'react-slideshow-image/dist/styles.css';
-import { scrollNav } from '../utils/scrollNav';
+// import { scrollNav } from '../utils/scrollNav';
 
 const ExploreCard = ({
   id,

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { motion } from 'framer-motion';
@@ -8,8 +9,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 import { navVariants } from '../utils/motion';
 import styles from '../styles';
 import { navButtons } from '../constants';
-import { scrollNav } from '../utils/scrollNav';
-import Link from 'next/link';
+// import { scrollNav } from '../utils/scrollNav';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
