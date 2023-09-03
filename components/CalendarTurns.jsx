@@ -89,9 +89,8 @@ const CalendarTurns = ({ id }) => {
               // console.log(end.getMinutes());
               // console.log(minutosDeMas);
               return new Date(end.getTime() - minutosDeMas - 1000);
-            } else {
-              return end;
             }
+            return end;
             // end.getHours() === 0 && end.getMinutes() === 0 ? new Date(end.getTime() - 1) : end
           }}
           showMultiDayTimes
@@ -99,8 +98,7 @@ const CalendarTurns = ({ id }) => {
           style={{ height: 600 }}
           messages={messages}
           eventPropGetter={(event) => {
-            const bgEvent =
-              event.id === 'salaA'
+            const bgEvent = event.id === 'salaA'
                 ? 'rgb(63, 81, 181)'
                 : event.id === 'salaB'
                   ? 'rgb(244, 81, 30)'
