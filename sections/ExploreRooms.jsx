@@ -12,7 +12,11 @@ const ExploreRooms = () => {
   const [active, setActive] = useState('world-2');
   const [showMore, setShowMore] = useState(false);
   const [instruments, setInstruments] = useState([]);
-  const show = () => {
+  const show = (scroll) => {
+    
+    if (scroll) {
+      document.querySelector('#salas').scrollIntoView()
+    }
     setShowMore(!showMore);
   };
   
@@ -32,6 +36,9 @@ const ExploreRooms = () => {
   useEffect(() => {
       worldActive()
   }, [active]);
+  useEffect(() => {
+      console.log(instruments)
+  }, [instruments]);
 
   return (
     <section className={`${styles.paddings} relative`}>
@@ -64,7 +71,7 @@ const ExploreRooms = () => {
       </motion.div>
       {
             showMore && (
-              <ModalRoom show={show} instruments={instruments} />
+              <ModalRoom show={show} showMore={showMore} instruments={instruments} />
             )
           }
     </section>

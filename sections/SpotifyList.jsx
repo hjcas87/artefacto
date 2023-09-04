@@ -14,16 +14,16 @@ const SpotifyList = () => (
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.25}}
     >
       <motion.div
         variants={fadeIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] flex justify-center flex-col"
+        className="flex-[0.75] flex justify-center flex-col overflow-hidden"
       >
         <TypingText title="| Producciones" textStyles="text-center" />
         <TitleText title={<>Escuchá producciones realizadas en el estudio</>} textStyles="text-center"/>
         <iframe
-          style={{ borderRadius: 12, marginTop: '3rem' }}
+          style={{ borderRadius: 12, marginTop: '3rem', overflow: 'hidden' }}
           src="https://open.spotify.com/embed/playlist/25IjZBPxy8iaaqZ9762tOP?utm_source=generator&theme=0"
           width="100%"
           height={700}

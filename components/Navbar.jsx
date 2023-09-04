@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 
 import { motion } from 'framer-motion';
@@ -9,7 +8,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 import { navVariants } from '../utils/motion';
 import styles from '../styles';
 import { navButtons } from '../constants';
-// import { scrollNav } from '../utils/scrollNav';
+import { scrollNav } from '../utils/scrollNav';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -44,33 +43,19 @@ const Navbar = () => {
               : 'sidebar-content'
           }
         >
-          {/* <Link
-                  href={'#ubicacion'}
-                  prefetch={true}
-                  scroll={false}
-                  style={{
-                    transform: !isOpen && 'translateX(-250px)',
-                    transition: !isOpen && '0s',
-                  }}
-                  // onClick={(e) => scrollNav(e, setOpen)}
-                >
-                  <a> ubicacion</a>
-                </Link> */}
           {
             navButtons.map((button, i) => (
               <div className="btn-nav" key={i}>
-                <Link
+                <a
                   href={button.href}
-                  prefetch={false}
-                  scroll={false}
                   style={{
                     transform: !isOpen && 'translateX(-250px)',
                     transition: !isOpen && '0s',
                   }}
-                  // onClick={(e) => scrollNav(e, setOpen)}
+                  onClick={(e) => scrollNav(e, setOpen)}
                 >
                   {button.title}
-                </Link>
+                </a>
               </div>
             ))
           }

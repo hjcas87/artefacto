@@ -1,24 +1,19 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 import styles from '../styles';
-import { CalendarTurns, Spinner, TitleText, TypingText } from '../components';
+import { CalendarTurns, TitleText, TypingText } from '../components';
 import { staggerContainer, fadeIn } from '../utils/motion';
-import { useEffect, useRef, useState } from 'react';
  
 
 const ListOfRooms = () => {
-  // const salas = ['salaA', 'salaB', 'salaEstudio'];const ref = useRef(null)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoadedA, setIsLoadedA] = useState(false)
+  const [isLoadedB, setIsLoadedB] = useState(false)
+  const [isLoadedE, setIsLoadedE] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref)
-  useEffect(() => {
-    if (!isLoaded && isInView) {
-      console.log('first')
-      setIsLoaded(true)
-    }
-  }, [isInView])
   
   return (
     <section className={`${styles.paddings} relative z-10`} ref={ref} id="turnos">
@@ -47,7 +42,7 @@ const ListOfRooms = () => {
                   <TitleText title={<>SALA A</>} />
                 </div>
                 {
-                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaA'} />
+                  isInView || isLoadedA ? <CalendarTurns id={'salaA'} setIsLoaded={ setIsLoadedA }/> : <div className="h-[600px]" />
                 }                
               </div>
               <div>
@@ -55,23 +50,18 @@ const ListOfRooms = () => {
                   <TitleText title={<>SALA B</>} />
                 </div>
                 {
-                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaB'} />
-                } 
-                {/* <CalendarTurns id={'salaB'} /> */}
+                  isInView || isLoadedB ? <CalendarTurns id={'salaB'} setIsLoaded={ setIsLoadedB }/> : <div className="h-[600px]" />
+                }
               </div>
               <div>
                 <div className="my-7">
                   <TitleText title={<>SALA ESTUDIO</>} />
                 </div>
                 {
-                  !isLoaded ? <Spinner /> : <CalendarTurns id={'salaEstudio'} />
+                  isInView || isLoadedE ? <CalendarTurns id={'salaEstudio'} setIsLoaded={ setIsLoadedE }/> : <div className="h-[600px]" />
                 }
-              </div>
-            
-            {/* <CalendarTurns /> */}
-            {/* </div>
-          } */}
-          </div>
+                </div>
+            </div>
         </motion.div>
       </motion.div>
     </section>
