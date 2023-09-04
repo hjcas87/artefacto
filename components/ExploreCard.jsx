@@ -44,15 +44,15 @@ const ExploreCard = ({
             {title}
           </h2>
           {/* <a href="#salas" className="mx-auto"> */}
-            <button
-              type="button"
-              disabled={showMore}
-              onClick={() => show(true)}
-              style={{ minWidth: '200px' }}
-              className="mx-auto middle none center rounded-lg bg-gray-800 py-3 self-end px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            >
-              Ver Más
-            </button>
+          <button
+            type="button"
+            disabled={showMore}
+            onClick={() => show(true)}
+            style={{ minWidth: '200px' }}
+            className="mx-auto middle none center rounded-lg bg-gray-800 py-3 self-end px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Ver Más
+          </button>
           {/* </a> */}
         </div>
       </div>

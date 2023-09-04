@@ -2,23 +2,24 @@
 
 import { Fade } from 'react-slideshow-image';
 
-const ModalRoom = ({ show, instruments, showMore }) => {
+const ModalRoom = ({ show, instruments }) => (
   // return instruments.inst && (
-    return <div 
-    className="absolute bg-white top-0 left-0 right-0 mt-10 px-4 pt-4 pb-12 m-4 z-40 lg:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-gradient-to-t from-gray-800 from-70% via-indigo-800 via-15% to-indigo-500 to-90%"
-    // style={{
-    //   opacity: showMore ? '1' : '0',
-    //   zIndex: showMore ? '40' : '-40',
-    //   transition: '0.5s',
-    //   translate: showMore ? '0' : '-1000px'
-    // }}
+  <div className="absolute bg-white top-0 left-0 right-0 mt-10 px-4 pt-4 pb-12 m-4 z-40 lg:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-gradient-to-t from-gray-800 from-70% via-indigo-800 via-15% to-indigo-500 to-90%"
+  // style={{
+  //   opacity: showMore ? '1' : '0',
+  //   zIndex: showMore ? '40' : '-40',
+  //   transition: '0.5s',
+  //   translate: showMore ? '0' : '-1000px'
+  // }}
   >
     <div className="relative">
       <div className="absolute right-0 top-[-10px] z-40 font-bold text-black hover:cursor-pointer rounded-full shadow-lg shadow-gray-400 w-[50px] h-[50px] bg-white">
         <div 
           className="w-full h-full flex items-center justify-center text-3xl"
           onClick={() => show(null)}
-        >X</div>
+        >
+          X
+        </div>
       </div>
     </div>
     <Fade duration={10000}>
@@ -57,5 +58,5 @@ const ModalRoom = ({ show, instruments, showMore }) => {
     </div>
   </div>
 // );
-}
+)
 export default ModalRoom;
