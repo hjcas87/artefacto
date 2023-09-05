@@ -1,11 +1,11 @@
-export const server = async (id, setTurns) => {
+export const server = async (id, startWeek, setTurns) => {
   let events = [];
   await fetch('/api/turns', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ id, startWeek }),
   })
     .then((res) => res.json())
     .then((fetchData) => {

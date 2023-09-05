@@ -33,7 +33,7 @@ const calendar = google.calendar({
 });
 
 export default function handler(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   let events = [];
   calendar.events.list(
     {
@@ -43,7 +43,7 @@ export default function handler(req, res) {
           : req.body.id === 'salaB'
             ? arrayOfIds[1]
             : arrayOfIds[2],
-      timeMin: new Date().toISOString(),
+      timeMin: req.body.startWeek,
       maxResults: 300,
       singleEvents: true,
       orderBy: 'startTime',

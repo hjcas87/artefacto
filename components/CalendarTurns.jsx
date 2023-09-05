@@ -32,10 +32,12 @@ const localizer = dateFnsLocalizer({
 const CalendarTurns = ({ id, setIsLoaded }) => {
   const [turns, setTurns] = useState(null);
   const today = new Date();
+  const startWeek = startOfWeek(new Date(today), { weekStartsOn: 1 })
 
   useEffect(() => {
+    // console.log(result)
     setIsLoaded(true);
-    server(id, setTurns);
+    server(id, startWeek, setTurns);
   }, []);
 
   return !turns ? (
