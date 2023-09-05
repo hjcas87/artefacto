@@ -20,7 +20,7 @@ const ModalRoom = ({ show, instruments }) => (
           <div className="mb-5 mx-auto">
             <img
               src={inst.img}
-              className="h-80 rounded-[24px] mt-4 shadow-lg shadow-gray-400"
+              className="h-80 rounded-[24px] fade-img mt-4 shadow-lg shadow-gray-400"
             />
           </div>
           <h2 className="text-center text-lg font-bold">{inst.title}</h2>

@@ -212,17 +212,25 @@
   display: none !important;
   border: none;
 }
-.rbc-event-content {
+/* .rbc-event-content {
 
-}
+} */
 
 @media (max-width: 768px) {
   .rbc-event-content {
     font-size: small;
   }
 }
+.fade-img {
+  margin-top: 1rem;
+}
+@media (max-width: 450px) {
+  .fade-img {
+    margin-top: 0;
+  }
+}
 .rbc-event-label {
-  display: none !important;
+  /* display: none !important; */
 }
 .rbc-time-view {
   border: none !important;

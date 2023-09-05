@@ -50,7 +50,7 @@ const CalendarTurns = ({ id, setIsLoaded }) => {
         }
         culture="es"
         localizer={localizer}
-        defaultView="work_week"
+        defaultView={window.innerWidth > 768 ? 'work_week' : 'day'}
         views={['day', 'work_week']}
         events={turns}
         startAccessor="start"

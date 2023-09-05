@@ -1,6 +1,6 @@
 
 const IgButton = () => (
-  <div className="relative w-20 sm:w-24">
+  <div className="relative w-16 sm:w-20">
     <a
       href="https://www.instagram.com/artefactoestudiomdp/"
       target="_blank"
