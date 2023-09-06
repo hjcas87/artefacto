@@ -26,7 +26,7 @@ const ModalRoom = ({ show, instruments }) => (
               width={320}
               height={320}
               // loader={'Cargando'}
-              loading='lazy'
+              loading="lazy"
             />
             {/* <img
               src={inst.img}
