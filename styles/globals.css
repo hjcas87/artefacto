@@ -179,9 +179,19 @@
   background-color: white;
   width: 80%;
   margin: auto;
+  padding: 1rem;
+}
+.list-inst {
+  width: 75%;
 }
 @media (max-width: 768px) {
   .react-slideshow-container {
+    width: 100%;
+    
+  }
+}
+@media (max-width: 400px) {
+  .list-inst {
     width: 100%;
     
   }

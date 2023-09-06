@@ -31,7 +31,7 @@ export const exploreWorlds = [
     instruments: [
       {
         title: 'Fender Twin Reverb',
-        img: './twinreverb.jpg',
+        img: '/twinreverb.jpg',
         esp: [
           '85 vatios',
           'Dos altavoces Jensen® C-12K de 12"',
@@ -41,7 +41,7 @@ export const exploreWorlds = [
       },
       {
         title: 'Vox',
-        img: './vox.jpg',
+        img: '/vox.jpg',
         esp: [
           'Amplificador combo para guitarra a válvulas de 30 W, 3 x 12AX7 preamp y 4 x EL84 potencia',
           '2 Altavoces Celestion G12M Greenback de 12" a 16 Ohm',
@@ -51,7 +51,7 @@ export const exploreWorlds = [
       },
       {
         title: 'Roland Jazz Chorus',
-        img: './roland.jpg',
+        img: '/roland.jpg',
         esp: [
           'Construcción: Transistor',
           'Potencia: 2x 60 W',

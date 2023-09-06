@@ -1,12 +1,13 @@
 'use client';
 
+import Image from 'next/image';
 import { Fade } from 'react-slideshow-image';
 
 const ModalRoom = ({ show, instruments }) => (
   // return instruments.inst && (
   <div className="absolute bg-white top-0 left-0 right-0 mt-10 px-4 pt-4 pb-12 m-4 z-40 lg:w-1/2 sm:mx-auto flex flex-col justify-around rounded-[24px] bg-gradient-to-t from-gray-800 from-70% via-indigo-800 via-15% to-indigo-500 to-90%">
     <div className="relative">
-      <div className="absolute right-0 top-[-10px] z-40 font-bold text-black hover:cursor-pointer rounded-full shadow-lg shadow-gray-400 w-[50px] h-[50px] bg-white">
+      <div className="absolute right-[-10px] top-[-10px] z-40 font-medium text-white hover:cursor-pointer rounded-full shadow-lg shadow-gray-400 w-[50px] h-[50px] bg-red-900 border-2 border-white">
         <div className="w-full h-full flex items-center justify-center text-3xl"
           onClick={() => show(null)}
         >
@@ -18,13 +19,22 @@ const ModalRoom = ({ show, instruments }) => (
       {instruments.inst.map((inst, i) => (
         <div key={i} className="each-slide">
           <div className="mb-5 mx-auto">
-            <img
+            <Image
               src={inst.img}
-              className="h-80 rounded-[24px] fade-img mt-4 shadow-lg shadow-gray-400"
+              alt={inst.title}
+              className="w-full max-w-xs rounded-[24px] shadow-lg shadow-gray-400"
+              width={320}
+              height={320}
+              // loader={'Cargando'}
+              loading='lazy'
             />
+            {/* <img
+              src={inst.img}
+              className="w-full max-w-xs rounded-[24px] shadow-lg shadow-gray-400"
+            /> */}
           </div>
           <h2 className="text-center text-lg font-bold">{inst.title}</h2>
-          <ul className="p-8 list-disc flex flex-col w-3/4 m-auto">
+          <ul className="px-8 py-4 list-disc flex flex-col list-inst m-auto">
             {
               inst.esp.map((item, index) => (
                 <li key={index}>{item}</li>
