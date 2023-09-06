@@ -18,9 +18,10 @@ const shimmer = (w, h) => `
 </svg>`;
 
 const toBase64 = (str) => {
-  typeof window === 'undefined'
-    ? Buffer.from(str).toString('base64')
-    : window.btoa(str)
+  if (typeof window === 'undefined') {
+    return Buffer.from(str).toString('base64');
+  }
+    return window.btoa(str);
   };
 
 const ModalRoom = ({ show, instruments }) => (
