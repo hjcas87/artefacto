@@ -21,8 +21,8 @@ const toBase64 = (str) => {
   if (typeof window === 'undefined') {
     return Buffer.from(str).toString('base64');
   }
-    return window.btoa(str);
-  };
+  return window.btoa(str);
+};
 
 const ModalRoom = ({ show, instruments }) => (
   // return instruments.inst && (
